@@ -62,6 +62,7 @@ class Movies extends React.Component {
               genres={genres}
               onFilter={this.handleFilter}
               onActive={onActive}
+              allMovies={allMovies}
             />
           </div>
           <div className="col">
@@ -99,6 +100,7 @@ class Movies extends React.Component {
               currentPage={currentPage}
               pageSize={pageSize}
               onPageChange={this.handlePageChange}
+      
             />
           </div>
         </div>

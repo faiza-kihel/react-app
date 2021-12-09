@@ -1,7 +1,7 @@
 import React from "react";
 class Genres extends React.Component {
   render() {
-    const { genres, onFilter, onActive } = this.props;
+    const { genres, onFilter, onActive, allMovies } = this.props;
     return (
       <ul className="list-group m-2">
         {genres.map((genre) => (
@@ -15,7 +15,7 @@ class Genres extends React.Component {
             {genre.name}
           </li>
         ))}
-        <li className="list-group-item">All movies</li>
+        <li className="list-group-item" onClick={()=>allMovies}>All movies</li>
       </ul>
     );
   }
