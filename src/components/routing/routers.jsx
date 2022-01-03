@@ -7,6 +7,7 @@ import Navbar from "./navbar";
 import Movies from "../movies/movies";
 import NotFound from "../routing/noFound";
 import LoginForm from "../form/loginForm";
+import RegisterForm from "../form/registerForm";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MoviesForm from "../form/moviesForm";
 class Router extends React.Component {
@@ -23,6 +24,7 @@ class Router extends React.Component {
           <Route exact path="/" component={Home}></Route>
           <Route path="/not-found" component={NotFound}></Route>
           <Route path="/login" component={LoginForm}></Route>
+          <Route path="/register" component={RegisterForm}></Route>
           <Redirect exact from="/" to="/movies" />
           <Redirect to="/not-found" />
         </Switch>
