@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MoviesTable = (props) => {
   const { movies, onDelete, onSort } = props;
@@ -16,7 +17,9 @@ const MoviesTable = (props) => {
       <tbody>
         {movies.map((movie) => (
           <tr key={movie.id}>
-            <td>{movie.title}</td>
+            <td>
+              <Link to={`movies/${movie.id}`}>{movie.title}</Link>
+            </td>
             <td>{movie.stock}</td>
             <td>{movie.genre}</td>
             <td>{movie.rate}</td>
