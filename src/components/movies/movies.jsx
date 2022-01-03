@@ -5,7 +5,9 @@ import Genres from "./genres";
 import { paginate } from "../../utils/paginate";
 import { getGenres } from "../../services/genreService";
 import MoviesTable from "./moviesTable";
+import { Link } from "react-router-dom";
 import _ from "lodash";
+
 class Movies extends React.Component {
   state = {
     movies: [],
@@ -88,6 +90,10 @@ class Movies extends React.Component {
             />
           </div>
           <div className="col">
+            <button className="btn btn-primary">
+              {" "}
+              <Link to="/movies/add">Add movie</Link>
+            </button>
             <MoviesTable
               onDelete={this.handelDelete}
               movies={movies}

@@ -17,6 +17,7 @@ class Router extends React.Component {
         <Navbar />
         <Switch>
           <Route path="/movies/:id" component={MoviesForm}></Route>
+          <Route path="/movies/add" component={MoviesForm}></Route>
           <Route path="/products" component={Products}></Route>
           <Route path="/posts" component={Posts}></Route>
           <Route path="/admin" component={Admin}></Route>

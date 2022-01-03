@@ -21,8 +21,8 @@ class RegisterForm extends Form {
   render() {
     return (
       <div className="row">
-        <div className="col-md-6.offset-md-3.mb-4">
-          <form onSubmit={this.handleSubmit}>
+        <div className="col-md-6 offset-md-3 mb-4">
+          <form onSubmit={this.handleSubmit} className="mb-2">
             {this.renderInput("username", "Username", "email")}
             {this.renderInput("password", "Password", "password")}
             {this.renderInput("name", "Name", "text")}
