@@ -7,7 +7,6 @@ import { getGenres } from "../../services/genreService";
 import MoviesTable from "./moviesTable";
 import { Link } from "react-router-dom";
 import _ from "lodash";
-
 class Movies extends React.Component {
   state = {
     movies: [],
@@ -54,6 +53,7 @@ class Movies extends React.Component {
     this.setState({ sortColumn });
   };
   render() {
+  
     const {
       movies: allMovies,
       pageSize,
@@ -70,6 +70,7 @@ class Movies extends React.Component {
         : allMovies;
     const filtred = _.orderBy(filter, [sortColumn.path], [sortColumn.order]);
     const movies = paginate(filtred, currentPage, pageSize);
+    const id = this.state.movies.length + 1;
 
     return (
       <div>
@@ -90,10 +91,10 @@ class Movies extends React.Component {
             />
           </div>
           <div className="col">
-            <button className="btn btn-primary">
-              {" "}
-              <Link to="/movies/add">Add movie</Link>
-            </button>
+            <Link className="btn btn-primary" to={`movies/${id}`}>
+              Add movie
+            </Link>
+
             <MoviesTable
               onDelete={this.handelDelete}
               movies={movies}

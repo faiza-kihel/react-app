@@ -26,8 +26,7 @@ const MoviesTable = (props) => {
             <td>
               <button
                 onClick={() => onDelete(movie)}
-                className="button button btn-danger btn-sm"
-              >
+                className="button button btn-danger btn-sm">
                 Delete
               </button>
             </td>

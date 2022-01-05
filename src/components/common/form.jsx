@@ -19,19 +19,29 @@ class Form extends React.Component {
     const { error } = Joi.validate(obj, schema);
     return error ? error.details[0].message : null;
   };
+  //add movies to table
+  add = () => {
+    // const data = { ...this.state.data };
+    // data.id = this.props.match.params.id;
+    //const movies = { ...this.state.movies };
+    console.log("movies", this.props.match.params.movies);
+    // movies.push(data);
+    // return this.setState({ movies });
+  };
   handleSubmit = (e) => {
+    this.add();
     e.preventDefault();
     const errors = this.validate();
     this.setState({ errors: errors || {} });
+
     if (errors) return;
-    this.doSubmit();
   };
+
   handleChange = ({ currentTarget: input }) => {
     const errors = { ...this.state.errors };
     const errorMessage = this.validateProperty(input);
     if (errorMessage) errors[input.name] = errorMessage;
     else delete errors[input.name];
-
     const data = { ...this.state.data };
     data[input.name] = input.value;
     this.setState({ data, errors });

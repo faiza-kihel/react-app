@@ -10,6 +10,7 @@ import LoginForm from "../form/loginForm";
 import RegisterForm from "../form/registerForm";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MoviesForm from "../form/moviesForm";
+
 class Router extends React.Component {
   render() {
     return (
@@ -17,7 +18,7 @@ class Router extends React.Component {
         <Navbar />
         <Switch>
           <Route path="/movies/:id" component={MoviesForm}></Route>
-          <Route path="/movies/add" component={MoviesForm}></Route>
+          <Route path="/movies/add/:id" component={MoviesForm}></Route>
           <Route path="/products" component={Products}></Route>
           <Route path="/posts" component={Posts}></Route>
           <Route path="/admin" component={Admin}></Route>

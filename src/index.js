@@ -7,14 +7,14 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import "antd/dist/antd.css";
-//import Movies from "./components/movies";
 import Router from "./components/routing/routers";
-
+//import App from "./App";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Router />
     </BrowserRouter>
+    {/* <App /> */}
   </React.StrictMode>,
   document.getElementById("root")
 );

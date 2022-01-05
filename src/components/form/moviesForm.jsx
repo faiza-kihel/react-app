@@ -7,6 +7,7 @@ class MoviesForm extends Form {
   state = {
     data: { title: "", genre: "", numberInStock: "", rate: "" },
     errors: {},
+    id:null
   };
   //create ref
   title = React.createRef();
@@ -21,10 +22,11 @@ class MoviesForm extends Form {
     rate: Joi.number().required().label("Rate"),
   };
   render() {
+    
     return (
       <div className="row">
         <div className="col-md-6 offset-md-3 mb-4">
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit = {this.handleSubmit}>
             {this.renderInput("title", "Title", "text")}
             {this.renderInput("genre", "Genre", "text")}
             {this.renderInput("numberInStock", "Number in stock", "number")}

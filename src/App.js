@@ -1,6 +1,7 @@
 import React from "react";
-import Counters from "./components/counters";
-import Navbar from "./components/navbar";
+import Counters from "./components/counter/counters";
+import Navbar from "./components/counter/navbar";
+import axios from "axios";
 class App extends React.Component {
   state = {
     counters: [
@@ -10,6 +11,11 @@ class App extends React.Component {
       { id: 4, value: 0 },
     ],
   };
+  async componentDidMount() {
+    const promise = axios.get("https://jsonplaceholder.typicode.com/posts");
+    const result = await promise;
+    console.log("result", result);
+  }
   handleReset = () => {
     const counters = this.state.counters.map((counter) => {
       counter.value = 0;
