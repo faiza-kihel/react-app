@@ -31,6 +31,7 @@ class Form extends React.Component {
   handleSubmit = (e) => {
     this.add();
     e.preventDefault();
+    this.doSubmit();
     const errors = this.validate();
     this.setState({ errors: errors || {} });
 

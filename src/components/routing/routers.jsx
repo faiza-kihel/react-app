@@ -10,12 +10,21 @@ import LoginForm from "../form/loginForm";
 import RegisterForm from "../form/registerForm";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MoviesForm from "../form/moviesForm";
+import jwtDecode from "jwt-decode";
 
 class Router extends React.Component {
+  state = {};
+  componentDidMount() {
+    const jwt = localStorage.getItem("token");
+    const user = jwtDecode(jwt);
+    this.setState({ user });
+    console.log("user", user);
+  }
+
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar user={this.state.user} />
         <Switch>
           <Route path="/movies/:id" component={MoviesForm}></Route>
           <Route path="/movies/add/:id" component={MoviesForm}></Route>
