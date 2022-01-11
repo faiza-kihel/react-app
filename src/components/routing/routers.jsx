@@ -15,10 +15,11 @@ import jwtDecode from "jwt-decode";
 class Router extends React.Component {
   state = {};
   componentDidMount() {
-    const jwt = localStorage.getItem("token");
-    const user = jwtDecode(jwt);
-    this.setState({ user });
-    console.log("user", user);
+    try {
+      const jwt = localStorage.getItem("token");
+      const user = jwtDecode(jwt);
+      this.setState({ user });
+    } catch (ex) {}
   }
 
   render() {

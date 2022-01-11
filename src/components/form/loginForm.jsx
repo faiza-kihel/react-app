@@ -20,7 +20,7 @@ class LoginForm extends Form {
       const { data: jwt } = await authService.login(data.email, data.password);
       console.log("jwt", jwt);
       localStorage.setItem("token", jwt.token);
-      this.props.history.push("/");
+      window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
