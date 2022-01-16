@@ -11,6 +11,7 @@ import RegisterForm from "../form/registerForm";
 import { Route, Switch, Redirect } from "react-router-dom";
 import MoviesForm from "../form/moviesForm";
 import jwtDecode from "jwt-decode";
+import Logout from "./logout";
 
 class Router extends React.Component {
   state = {};
@@ -37,6 +38,7 @@ class Router extends React.Component {
           <Route path="/not-found" component={NotFound}></Route>
           <Route path="/login" component={LoginForm}></Route>
           <Route path="/register" component={RegisterForm}></Route>
+          <Route path="/logout" component={Logout}></Route>
           <Redirect exact from="/" to="/movies" />
           <Redirect to="/not-found" />
         </Switch>
