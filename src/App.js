@@ -5,7 +5,12 @@ class App extends Component {
   state = { currentUser: { name: "mosh" } };
   render() {
     return (
-      <UserContext.Provider value={this.state.currentUser}>
+      <UserContext.Provider
+        value={{
+          currentUser: this.state.currentUser,
+          onLoggedIn: this.handleLoggedIn,
+        }}
+      >
         <div>
           <MoviePage />
         </div>

@@ -4,7 +4,7 @@ import UserContext from "./userContext";
 function MovieRow(props) {
   const currentUser = useContext(UserContext);
 
-  return <div>{currentUser.name}</div>;
+  return <div>Movie Row {currentUser.name}</div>;
 }
 
 export default MovieRow;
