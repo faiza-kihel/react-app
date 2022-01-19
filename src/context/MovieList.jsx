@@ -9,14 +9,15 @@ class MovieList extends Component {
   }
   render() {
     return (
-      <UserContext.Consumer>
-        {(userContext) => (
-          <div>
-            Movie List{" "}
-            {userContext.currentUser ? userContext.currentUser.name : ""} <MovieRow />
-          </div>
-        )}
-      </UserContext.Consumer>
+      // <UserContext.Consumer>
+      //   {(userContext) => (
+      //     <div>
+      //       Movie List{" "}
+      //       {userContext.currentUser ? userContext.currentUser.name : ""} 
+      //     </div>
+      //   )}
+      // </UserContext.Consumer>
+      <MovieRow />
     );
   }
 }
