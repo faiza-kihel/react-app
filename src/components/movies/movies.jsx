@@ -53,7 +53,6 @@ class Movies extends React.Component {
     this.setState({ sortColumn });
   };
   render() {
-  
     const {
       movies: allMovies,
       pageSize,
@@ -73,15 +72,9 @@ class Movies extends React.Component {
     const id = this.state.movies.length + 1;
 
     return (
-      <div>
-        {itemCount === 0 ? (
-          <h1>No movies in database</h1>
-        ) : (
-          <h1>Number of movies {this.count()}</h1>
-        )}
-
-        <div className="row">
-          <div className="col-2">
+      <div className="container">
+        <div className="row no-gutters">
+          <div className="col-sm-3">
             <Genres
               genres={genres}
               onFilter={this.handleFilter}
@@ -90,7 +83,12 @@ class Movies extends React.Component {
               selectedGenre={selectedGenre}
             />
           </div>
-          <div className="col">
+          <div className="col-sm">
+            {itemCount === 0 ? (
+              <h1>No movies in database</h1>
+            ) : (
+              <h1>Number of movies {this.count()}</h1>
+            )}
             <Link className="btn btn-primary" to={`movies/${id}`}>
               Add movie
             </Link>

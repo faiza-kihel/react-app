@@ -1,26 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./style.css";
-//import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.css";
 import "antd/dist/antd.css";
-//import Router from "./components/routing/routers";
+import Router from "./components/routing/routers";
 //import Movie from "./hoc/movie";
 //import Counter from "./hooks/Counter";
 //import Users from "./hooks/users";
-import App from "./App";
+//import App from "./App";
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    {/* <Users /> */}
-    {/* <Counter /> */}
-    {/* <BrowserRouter>
+    <BrowserRouter>
       <Router />
     </BrowserRouter>
-    <App /> */}
   </React.StrictMode>,
   document.getElementById("root")
 );
